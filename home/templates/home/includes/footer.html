@@ -1,0 +1,23 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/footer.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="container-footer">
+	<div id="footer">
+
+		<div class="footer-top">
+			<a>© BLUCCI All Rights Reserved</a>
+		</div>
+
+		<div class="footer-bottom">
+			<a href="{% url 'siteinfo:terms' %}" class="footer-tab-gap">T&C</a>
+			<a href="{% url 'siteinfo:contact' %}" class="footer-tab-gap">CONTACT</a>
+			<a href="{% url 'siteinfo:privacy' %}" class="footer-tab-gap">PRIVACY</a>
+		</div>
+
+	</div>
+</div>
+
+
+{% include 'toasts/includes/toast.html' %}

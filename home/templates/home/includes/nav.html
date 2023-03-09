@@ -1,0 +1,98 @@
+{% load static %}
+
+<head>
+	<link rel="icon" href="{% static 'home/images/logo/favicon.png' %}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{% static 'home/css/nav.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script src="https://kit.fontawesome.com/9bb8fa8ab0.js" crossorigin="anonymous"></script>
+	<title>BLUCCI</title>
+</head>
+
+<div class="container-nav">
+
+	<div class="nav-wrapper">
+		<div id="navbar">
+
+			<div class="leftside">
+				<a href="{% url 'home:home' %}">BLUCCI</a>
+			</div>
+
+			<div class="rightside">
+				{% url 'account:my_account' as url %}
+				{% url 'account:signin' as second_url %}
+				{% url 'account:signup' as third_url %}
+				<a id="navid" href="{% url 'account:my_account' %}" class="nav-tab-gap nav_underline {% if request.path == url %}active-nav{% endif %} {% if request.path == second_url %}active-nav{% endif %} {% if request.path == third_url %}active-nav{% endif %}">ACCOUNT</a>
+
+				{% url 'about:about' as url %}
+				<a id="navid" href="{% url 'about:about' %}" class="nav-tab-gap nav_underline {% if request.path == url %}active-nav{% endif %}">ABOUT</a>
+
+				{% url 'magazine:magazines' as url %}
+				<a id="navid" href="{% url 'magazine:magazines' %}" class="nav-tab-gap nav_underline {% if request.path == url %}active-nav{% endif %}">MAGAZINES</a>
+
+				{% url 'option:option' as url %}
+				<a id="navid" href="{% url 'option:option' %}" class="nav-tab-gap nav_underline {% if request.path == url %}active-nav{% endif %}">OPTIONS</a>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="mobile-nav" id="mbnav">
+		<div id="m_navbar">
+			<div class="m_leftside">
+				<a href="{% url 'home:home' %}">BLUCCI</a>
+			</div>
+
+			<div class="m_rightside">
+				<a class="burger" onclick="openNav()">&#9776;</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="mySidenav" class="sidenav">
+
+		<div class="sidenav_wrapper">
+
+			<div class="card_action">
+				<a class="closebtn" onclick="closeNav()">&times;</a>
+			</div>
+
+			<div class="inner_links">
+				<div class="m_link_alignment">
+					{% url 'account:my_account' as url %}
+					{% url 'account:signin' as second_url %}
+					{% url 'account:signup' as third_url %}
+					<a id="m_navid" href="{% url 'account:my_account' %}" class="m_nav-tab-gap {% if request.path == url %}m_active-nav{% endif %} {% if request.path == second_url %}m_active-nav{% endif %} {% if request.path == third_url %}m_active-nav{% endif %}">ACCOUNT</a>
+
+					{% url 'about:about' as url %}
+					<a id="m_navid" href="{% url 'about:about' %}" class="m_nav-tab-gap {% if request.path == url %}m_active-nav{% endif %}">ABOUT</a>
+
+					{% url 'magazine:magazines' as url %}
+					<a id="m_navid" href="{% url 'magazine:magazines' %}" class="m_nav-tab-gap {% if request.path == url %}m_active-nav{% endif %}">MAGAZINES</a>
+
+					{% url 'option:option' as url %}
+					<a id="m_navid" href="{% url 'option:option' %}" class="m_nav-tab-gap {% if request.path == url %}m_active-nav{% endif %}">OPTIONS</a>
+				</div>
+			</div>
+
+			<div class="user_info">
+				{% if user.is_authenticated %}
+					<a class="profile">{{user.first_name}}</a>
+				{% else %}
+					<a class="profile">Anonymous</a>
+				{% endif %}
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<script type="text/javascript" src="{% static 'home/js/nav.js' %}"></script>
+

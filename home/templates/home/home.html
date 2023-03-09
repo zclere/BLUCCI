@@ -1,0 +1,101 @@
+{% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'home/css/index.css' %}">
+	<link rel="icon" href="{% static 'home/images/logo/favicon.png' %}" type="image/x-icon">
+</head>
+
+
+
+<body>
+	<section class="wrapper-correction">
+		<div class="container">
+			{% include 'home/includes/nav.html' %}
+			<div class="leftbase">
+				{% if most_recent_cl.image_URL %}
+					<img class="home-bg-img" src="{{most_recent_cl.image_URL}}">
+				{% else %}
+					<img class="home-bg-img" src="{% static '../media/magazine_images/no-img-available.jpg' %}">
+				{% endif %}
+			</div>
+			<div class="rightbase">
+				{% if firsttitle %}
+					<p class="home-text">{{firsttitle | truncatechars:30}}</p>
+				{% else %}
+					<p class="home-text">No title available right now..</p>
+				{% endif %}
+
+				{% if most_recent_cl.content_slug %}
+					<a href="{{'magazines'}}/{{most_recent_cl.magazine.magazine_slug}}/{{most_recent_cl.content_slug}}" class="link-post"><i class="fa-solid fa-arrow-right arrow-icon"></i></a>
+				{% else %}
+					<a class="link-post"><i class="fa-solid fa-arrow-right arrow-icon"></i></a>
+				{% endif %}
+
+				{% if most_recent_cl.date_published %}
+					<p class="date-flipper">{{most_recent_cl.date_published | date:"d , m , Y"}}</p>
+				{% else %}
+					<p class="date-flipper">No date available</p>
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="action-class">
+			<div class="action-container">
+				{% if user.is_authenticated %}
+					<p>Let's check out the scopes of this project..</p>
+					<a href="{% url 'option:option' %}">Options</a>
+				{% else %}
+					<p>Join the club with a few clicks here and there..</p>
+					<a href="{% url 'account:signup' %}">Sign up</a>
+				{% endif %}
+			</div>
+		</div>
+
+
+		{% if feature_c %}
+			<div class="featured-blogs">
+				<div class="fb-wrapper">
+
+					{% for feature_c in feature_c %}
+						{% if feature_c.grid_position == 'left' %}
+							<a class="fc_link" href="{{'magazines'}}/{{feature_c.featured_content.magazine.magazine_slug}}/{{feature_c.featured_content.content_slug}}">
+								<div class="fb-card-left">
+									<div class="fb-texts">
+										<p class="fb-heading">{{feature_c.title}}</p>
+										<p class="fb-paragraph">{{feature_c.seo_description | truncatechars:280}}</p>	
+									</div>
+
+									<img class="blog-img-right" src="{{feature_c.featured_content.image_URL}}">
+								</div>
+							</a>
+
+						{% else %}
+							<a class="fc_link" href="{{'magazines'}}/{{feature_c.featured_content.magazine.magazine_slug}}/{{feature_c.featured_content.content_slug}}">
+								<div class="fb-card-right">
+									<img class="blog-img-left" src="{{feature_c.featured_content.image_URL}}">
+
+									<div class="fb-texts">
+										<p class="fb-heading">{{feature_c.title}}</p>
+										<p class="fb-paragraph">{{feature_c.seo_description | truncatechars:280}}</p>	
+									</div>
+								</div>
+							</a>
+						{% endif %}
+
+					{% endfor %}
+
+				</div>
+			</div>
+		{% else %}
+			<div class="featured-blogs"></div>
+		{% endif %}
+
+	</section>
+
+
+
+	{% include 'home/includes/footer.html' %}
+
+</body>
+
+<script type="text/javascript" src="{% static 'home/js/index.js' %}"></script>
