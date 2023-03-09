@@ -1,0 +1,73 @@
+{% load static %}
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'magazine/css/magazines.css' %}">
+</head>
+
+
+{% include 'home/includes/nav.html' %}
+
+
+{% if magazines %}
+
+	<div class="filter_qs">
+		<i class="fa-solid fa-filter" onclick="filterFunction(0)"></i>
+	</div>
+
+	<div class="genre hidden">
+		{% csrf_token %}
+		<form>
+			{% for genre in genre %}
+				<input type="submit" id="input_style" name="genre_fill" value="#{{genre.name}}">
+			{% endfor %}
+				<a id="clear_filter" href="{% url 'magazine:magazines' %}">Clear</a>
+		</form>
+	</div>
+
+
+
+	<section class="card-container">
+		
+		<div class="cards-wrapper">
+
+			{% for magazine in magazines %}
+				<div class="cards">
+				
+					<a href="{{magazine.magazine_slug}}">
+						<div>
+							{% if magazine.image_URL %}
+								<img id="card-img" src="{{magazine.image_URL}}">
+							{% else %}
+								<img id="card-img" src="{{ MEDIA_URL }}/magazine_images/no-img-available.jpg">
+							{% endif %}
+						</div>
+					</a>
+
+				</div>
+			{% endfor %}
+
+
+		</div>
+
+	</section>
+
+{% else %}
+
+	<section class="card-container">
+
+		<div class="lottie-style">
+	    	<lottie-player id="lotte_player" src="{{ MEDIA_URL }}/animations/coffee.json" background="transparent" speed="0.8" loop autoplay></lottie-player>
+
+	    	<p>Oh Sorry! We don't have any contents for you at the moment, but here's some COFFEE!</p>
+    	</div>
+	</section>
+
+{% endif %}
+
+
+
+{% include 'home/includes/footer.html' %}
+
+
+<script src="{% static 'magazine/js/magazine.js' %}"></script>

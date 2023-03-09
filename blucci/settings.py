@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'tinymce',
     'home',
     'account',
-#    'magazine',
+    'magazine',
 #    'option',
 #    'about',
 #    'siteinfo',
