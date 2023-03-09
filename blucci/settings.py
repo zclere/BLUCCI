@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'home',
     'account',
     'magazine',
-#    'option',
+    'option',
 #    'about',
 #    'siteinfo',
 #    'toasts',

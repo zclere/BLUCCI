@@ -1,0 +1,193 @@
+.container {
+	padding-top: 230px;
+	padding-bottom: 70px;
+	display: flex;
+	justify-content: center;
+}
+
+
+.leftbase {
+	width: 10%;
+	margin-right: 10px;
+}
+
+.leftbase a {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+@media (hover: hover) {
+	.leftbase a:hover {
+		opacity: 0.7;
+	}
+}
+
+.buttonnav {
+	text-decoration: none;
+	border: 1px solid black;
+	color: black;
+	font-size: 13px;
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	margin-bottom: 10px;
+}
+
+.leftbase a.active {
+	background-color: black;
+	color: white;
+}
+
+.centerbase {
+	width: 2%;
+	height: 220px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: orange;
+	transition: 1s ease-in-out;
+}
+
+@media (hover: hover) {
+	.centerbase:hover {
+		transform: scaleX(0.5);
+		transition: 1s ease-in-out;
+	}
+}
+
+.rightbase {
+	width: 60%;
+	height: 250px;
+	padding: 10px;
+}
+
+.rightbase h1 {
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+.rightbase p {
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+.rightbase a {
+	background-color: black;
+	color: white;
+	border-radius: 1000px;
+	text-decoration: none;
+	padding: 10px;
+	font-size: 10px;
+}
+
+@media (hover: hover) {
+	.rightbase a:hover {
+		opacity: 0.7;
+	}
+}
+
+.contextp {
+	margin-top: 20px !important;
+	font-size: 17px !important;
+	margin-bottom: 25px !important;
+	text-align: justify;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+
+	.buttonnav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: auto;
+		line-height: 20px;
+		padding: 0px 5px 0px 5px;
+	}
+
+	.rightbase a {
+		line-height: 50px;
+	}
+
+
+}
+
+@media only screen and (max-width: 920px) {
+
+	.centerbase {
+		height: 320px;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+
+	.container {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 150px;
+	}
+
+
+	.leftbase {
+		width: auto;
+		margin-right: 0px;
+		display: flex;
+		justify-content: center;
+	}
+
+
+	.buttonnav {
+		font-size: 12px;
+		width: 100px;
+		height: auto;
+		line-height: 13px;
+		padding: 15px 5px 15px 5px;
+	}
+
+	.centerbase {
+		width: auto;
+		height: 2%;
+		margin-left: 43px;
+		margin-right: 43px;
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+
+	.rightbase {
+		width: auto;
+		height: auto;
+		padding: 0px;
+		margin-left: 43px;
+		margin-right: 43px;
+	}
+
+}
+
+
+@media only screen and (max-width: 610px) {
+
+
+	.centerbase {
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+	.rightbase {
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+}
+
+@media only screen and (max-width: 450px) {
+
+	.container {
+		padding-top: 120px;
+	}
+
+}

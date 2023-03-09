@@ -1,0 +1,52 @@
+{% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'option/css/options.css' %}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+
+{% include 'home/includes/nav.html' %}
+
+
+
+
+<section class="container">
+
+	<div class="leftbase">
+		<a class="buttonnav tablinks" id="defaultOpen" onclick="openTab(event, 'install_it')">INSTALL IT</a>
+		<a class="buttonnav tablinks" onclick="openTab(event, 'admin_panel')">ADMIN PANEL</a>
+	</div>
+
+	<div class="centerbase"></div>
+
+	<div class="rightbase">
+		<div id="install_it" class="tabcontent">
+			<h1>INSTALL IT</h1>
+			<p>Make this project your own! You can fork this project from here <a class="lnk-fixer" href="https://github.com/zclere/BLUCCI">https://github.com/zclere/BLUCCI</a></p>
+			<p class="contextp">This webapp was built to help people learn web development with ease, so it has some really cool and powerful features but lacks vision because that wasn't the focus, but feel free to add vision and make this project your own! feel free to tag me! Can't wait to see what you make of this! ^^</p>	
+		</div>
+
+		<div id="admin_panel" class="tabcontent" style="display: none;">
+			<h1>ADMIN PANEL</h1>
+			<p>Use these credentials to login on the panel</p>
+			<p>Username: <b>guest</b> Password:<b> guest101</b></p>
+
+			<p class="contextp">Have a look around to understand how everything is working behind the scenes! Also, you can edit posts btw!</p>
+
+			<a href="{% url 'admin:index' %}">Take me to panel</a>
+		</div>
+
+	</div>
+	
+
+</section>
+
+
+
+
+{% include 'home/includes/footer.html' %}
+
+
+
+<script type="text/javascript" src="{% static 'option/js/options.js' %}"></script>

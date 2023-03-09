@@ -12,8 +12,8 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('accounts/', include('account.urls')),
     path('magazines/', include('magazine.urls')),
+    path('options/', include('option.urls')),
 #    path('about/', include('about.urls')),
-#    path('options/', include('option.urls')),
 #    path('siteinfo/', include('siteinfo.urls')),
 ]
 
