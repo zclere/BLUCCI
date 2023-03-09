@@ -1,5 +1,4 @@
 from pathlib import Path
-from .secrets import *
 import os
 
 import dotenv
