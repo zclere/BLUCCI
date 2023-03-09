@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'magazine',
     'option',
     'about',
-#    'siteinfo',
+    'siteinfo',
 #    'toasts',
 ]
 

@@ -14,7 +14,7 @@ urlpatterns = [
     path('magazines/', include('magazine.urls')),
     path('options/', include('option.urls')),
     path('about/', include('about.urls')),
-#    path('siteinfo/', include('siteinfo.urls')),
+    path('siteinfo/', include('siteinfo.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

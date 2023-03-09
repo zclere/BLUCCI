@@ -1,0 +1,45 @@
+{% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'siteinfo/css/siteinfo.css' %}">
+	<link rel="icon" href="{% static 'home/images/logo/favicon.png' %}" type="image/x-icon">
+</head>
+
+
+<section class="container">
+	{% include 'home/includes/nav.html' %}
+
+	<div class="wrapper">
+
+		<div class="carone">
+			<video class="video-wrapper" loop autoplay muted>
+				<source src="{% static '../media/videos/video_shoe.mp4' %}" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="cardtwo">
+			<div class="box">{{privacy.policy | safe}}</div>
+		</div>
+
+	</div>
+
+	<div class="siteinfo-wrapper">
+		<div class="footer-siteinfo">
+
+			<div class="siteinfo-top">
+				<a>© BLUCCI All Rights Reserved</a>
+			</div>
+
+			<div class="siteinfo-bottom">
+				<a href="{% url 'siteinfo:terms' %}" class="footer-tab-gap" style="color: white;">T&C</a>
+				<a href="{% url 'siteinfo:contact' %}" class="footer-tab-gap" style="color: black;">CONTACT</a>
+				<a href="{% url 'siteinfo:privacy' %}" class="footer-tab-gap" style="color: black;">PRIVACY</a>
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+
+{% include 'toasts/includes/toast.html' %}
