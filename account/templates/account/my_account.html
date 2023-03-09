@@ -26,7 +26,11 @@
 		        <label class="last">{{user.profile.birthday.year}}</label>
 			</div>
 
-			<p class="gender"><i class="fa-solid fa-mars gender-sign"></i></p>
+			{% if user.profile.gender == 'Male' %}
+				<p class="gender"><i class="fa-solid fa-mars gender-sign"></i></p>
+			{% else %}
+				<p class="gender"><i class="fa-solid fa-venus gender-sign"></i></p>
+			{% endif %}
 
 
 			<div class="links">
