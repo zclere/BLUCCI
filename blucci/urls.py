@@ -13,7 +13,7 @@ urlpatterns = [
     path('accounts/', include('account.urls')),
     path('magazines/', include('magazine.urls')),
     path('options/', include('option.urls')),
-#    path('about/', include('about.urls')),
+    path('about/', include('about.urls')),
 #    path('siteinfo/', include('siteinfo.urls')),
 ]
 

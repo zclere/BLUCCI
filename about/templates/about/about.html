@@ -1,0 +1,24 @@
+{% load static %}
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'about/css/about.css' %}">
+	<link rel="icon" href="{% static 'home/images/logo/favicon.png' %}" type="image/x-icon">
+</head>
+
+
+<section class="container">
+	{% include 'home/includes/nav.html' %}
+
+	<div class="wrapper">
+		<div class="box">
+			<h1>What is this webapp about?</h1>
+
+			<p>This is a webapp that you can use to store magazines you like and share with people you love! but if you have other plans and wanna use this app some other way, you can totally fork this app and use it to create something amazing!! To do that checkout <a href="{% url 'option:option' %}">Options</a></p>
+		</div>
+	</div>
+
+
+</section>
+
+{% include 'home/includes/footer.html' %}
