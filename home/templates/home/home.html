@@ -15,7 +15,7 @@
 				{% if most_recent_cl.image_URL %}
 					<img class="home-bg-img" src="{{most_recent_cl.image_URL}}">
 				{% else %}
-					<img class="home-bg-img" src="{% static '../media/magazine_images/no-img-available.jpg' %}">
+					<img class="home-bg-img" src="{{ MEDIA_URL }}/magazine_images/no-img-available.jpg">
 				{% endif %}
 			</div>
 			<div class="rightbase">
