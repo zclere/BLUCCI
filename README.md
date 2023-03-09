@@ -90,3 +90,17 @@ Access the Webapp
 ```
 http://127.0.0.1:8000
 ```
+
+## OPTIONAL ERROR HANDLING STEP:
+If you're unable to make this project work on your linux machine, chances are it's not able to locate the .env file from your blucci/settings.py file,
+Replace this bit of code in your settings.py file
+```
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+```
+with
+```
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="provide/absolute/path/to/this/file.env")
+```
+Add the absolute path to the .env file, and now it should work! Enjoy! 
