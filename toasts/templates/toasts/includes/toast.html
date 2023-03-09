@@ -1,0 +1,57 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'toasts/css/toastify.css' %}" type="text/css">
+<script src="{% static 'toasts/js/toastify.js' %}" type="text/javascript"></script>
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success'%}
+            <script>
+                var myToast = Toastify({
+                    text: "{{ message }}",
+                    duration: 6000,
+                    gravity: 'bottom',
+                    positionLeft: true,
+                    position: 'left',
+                })
+            </script>
+        {% elif message.tags == 'info' %}
+            <script>
+                var myToast = Toastify({
+                    text: "{{ message }}",
+                    duration: 6000,
+                    gravity: 'bottom',
+                    positionLeft: true,
+                    position: 'left',
+                })
+            </script>
+        {% elif message.tags == 'warning' %}
+            <script>
+                var myToast = Toastify({
+                    text: "{{ message }}",
+                    duration: 6000,
+                    gravity: 'bottom',
+                    positionLeft: true,
+                    position: 'left',
+                })
+            </script>
+        {% elif message.tags == 'error' %}
+            <script>
+                var myToast = Toastify({
+                    text: "{{ message }}",
+                    duration: 6000,
+                    gravity: 'bottom',
+                    positionLeft: true,
+                    position: 'left',
+                })
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+
+<script>
+
+    myToast.showToast();
+
+</script>

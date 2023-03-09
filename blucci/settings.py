@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'option',
     'about',
     'siteinfo',
-#    'toasts',
+    'toasts',
 ]
 
 MIDDLEWARE = [
