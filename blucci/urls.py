@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('tinymce/', include('tinymce.urls')),
-#    path('accounts/', include('account.urls')),
+    path('accounts/', include('account.urls')),
 #    path('about/', include('about.urls')),
 #    path('magazines/', include('magazine.urls')),
 #    path('options/', include('option.urls')),

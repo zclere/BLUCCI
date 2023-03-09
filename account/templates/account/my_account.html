@@ -1,0 +1,44 @@
+{% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'account/css/my_account.css' %}">
+</head>
+
+{% include 'home/includes/nav.html' %}
+
+<section class="account-container">
+	
+	<div class="cards-wrapper">
+		<div class="card-one">
+			<p class="title">MY ACCOUNT</p>
+
+			<p class="name">{{user.first_name}} {{user.last_name}} | {{user.username}}</p>
+
+			<div class="dob">
+		        <label>DD</label>
+		        <label>MM</label>
+		        <label>YY</label>
+			</div>
+
+			<div class="dob-two">
+		        <label class="first">{{user.profile.birthday | date:"d"}}</label>
+		        <label class="middle">{{user.profile.birthday | date:"m"}}</label>
+		        <label class="last">{{user.profile.birthday.year}}</label>
+			</div>
+
+			<p class="gender"><i class="fa-solid fa-mars gender-sign"></i></p>
+
+
+			<div class="links">
+				<a href="{% url 'admin:index' %}{{'password_change'}}" class="chg">Change Password</a>
+				<a href="{% url 'admin:index' %}{{'auth'}}/{{'user'}}" class="chg">Edit Profile</a>	
+			</div>
+
+		</div>
+		<div class="card-two"><a href="{% url 'account:signout' %}"><p>LOGOUT</p></a></div>
+	</div>
+
+</section>
+
+
+{% include 'home/includes/footer.html' %}

@@ -1,0 +1,205 @@
+.account-container {
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-top: 200px;
+	margin-bottom: 150px;
+}
+
+.cards-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+
+.card-one {
+	width: 350px;
+	height: auto;
+	margin-right: 10px;
+	border: 1px solid black;
+	position: relative;
+}
+
+.title {
+	text-align: center;
+	position: absolute;
+	margin-top: -15px;
+	margin-left: 0px;
+	font-size: 15px;
+	letter-spacing: 12px;
+}
+
+.name {
+	text-align: center;
+	margin-top: 40px;
+}
+
+
+.dob {
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.dob-two {
+	margin-top: 20px;
+	font-family: "Circular Std Black";
+	font-size: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.middle {
+	margin-left: 25px;
+}
+
+.gender {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.gender-sign {
+	font-size: 60px;
+}
+
+.links {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+	margin-bottom: 40px;
+}
+
+.chg {
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+.card-two {
+	width: 100px;
+	height: auto;
+	background-color: black;
+	margin-left: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	cursor: inherit;
+}
+
+.card-two a {
+	font-family: "Circular Std Black";
+	font-size: 15px;
+	transform: rotate(-90deg);
+	color: black;
+	background-color: white;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-decoration: none;
+	cursor: inherit;
+	transition: 5s ease;
+}
+
+.card-two p {
+	cursor: pointer;
+}
+
+@media (hover: hover) {
+
+	.card-two a:hover {
+		padding-left: 20px;
+		padding-right: 20px;
+		transition: 5s ease;
+	}
+
+}
+
+@media only screen and (max-width: 610px) {
+
+	.account-container {
+		margin-left: 23px;
+		margin-right: 23px;
+		padding-top: 130px;
+	}
+
+	.cards-wrapper {
+		display: block;
+	}
+
+	.card-one {
+		width: 100%;
+		margin-right: 0px;
+		border: 1px solid black;
+	}
+
+	.title {
+		margin-top: -25px;
+		margin-left: 0px;
+		font-size: 13px;
+	}
+
+	.card-two {
+		width: 100%;
+		height: 60px;
+		margin-left: 0px;
+		margin-top: 20px;
+	}
+
+	.card-two a {
+		transform: rotate(0deg);
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		background-color: black;
+		color: white;
+	}
+
+}
+
+@media only screen and (max-width: 490px) {
+
+	.title {
+		font-size: 10px;
+	}
+
+	.dob-two {
+		font-size: 13px;
+	}
+
+	.gender-sign {
+		font-size: 30px;
+	}
+
+	.card-two a {
+		font-size: 12px;
+	}
+
+}
+
+@media only screen and (max-width: 360px) {
+
+	.title {
+		font-size: 10px;
+		letter-spacing: 10px;
+	}
+
+	.dob {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.dob-two {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+}

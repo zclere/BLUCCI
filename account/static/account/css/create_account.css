@@ -1,0 +1,250 @@
+
+
+.account-container {
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-top: 120px;
+	margin-bottom: 150px;
+}
+
+.filter {
+	display: flex;
+	justify-content: center;
+}
+
+.filter a{
+	text-decoration: none;
+	font-size: 12px;
+	margin-right: 10px;
+}
+
+.filter-button {
+	line-height: 45px;
+	color: black;
+}
+
+.focused-filter {
+	text-align: center;
+	color: white;
+	background-color: black;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	padding: 2px;
+}
+
+@media (hover: hover) {
+
+	.filter-button:hover {
+		opacity: 0.7;
+	}
+
+}
+
+.cards-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+}
+
+.card-zero {
+	width: 500px;
+	height: 400px;
+	height: auto;
+	background-color: black;
+	margin-right: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	position:relative;
+	overflow:hidden;
+	cursor: crosshair;
+}
+
+
+.card-zero video {
+    max-width: 100%;
+    max-height: 100%;
+    position:absolute;
+    width: 500px;
+    height: 400px;
+    transform:scale(2.4);
+    transition: 13s ease;
+
+}
+
+@media (hover: hover) {
+
+	.card-zero video:hover {
+		transform: scale(3.4);
+		transition: 13s ease;
+	}
+
+}
+
+
+.card-one {
+	width: 400px;
+	height: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: white;
+	border: 1px solid #36454F;
+	position: relative;
+	border-radius: 20px;
+}
+
+.title {
+	text-align: center;
+	position: absolute;
+	margin-top: -17px;
+	margin-left: 20px;
+	font-size: 10px;
+	letter-spacing: 12px;
+}
+
+.first-wrapper {
+	padding-top: 10px;
+}
+
+.field-wrapper {
+	display: block;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: black;
+	letter-spacing: 3px;
+}
+
+.form-input {
+	display: block;
+	font-size: 12px;
+	margin-top: 20px;
+}
+
+input[type=password], select {
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+input[type=text], select {
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+#id_gender {
+	font-size: 13px;
+}
+
+#id_gender_1, #id_gender_0 {
+	margin-top: 10px;
+}
+
+.account-button {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	border-radius: 1000px;
+	cursor: pointer;
+	border: 0px;
+}
+
+@media (hover: hover) {
+	.account-button:hover {
+		opacity: 0.7;
+	}
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+	.account-container {
+		margin-left: 47px;
+		margin-right: 43px;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+
+	.account-container {
+		margin-left: 43px;
+		margin-right: 43px;
+		margin-bottom: 120px;
+	}
+
+	.cards-wrapper {
+		display: block;
+		justify-content: center;
+	}
+
+	.card-zero {
+		width: 100%;
+		height: 220px;
+		margin-right: 0px;
+		display: block;
+		border-radius: 0px;
+	}
+
+	.card-zero video {
+	    max-width: 100%;
+	    max-height: 100%;
+	    width: 100%;
+	    height: 220px;
+	    object-fit: cover;
+	    transform:scale(1.1);
+	}
+
+	.card-one {
+		width: auto;
+		margin-left: 0px;
+		margin-right: 0px;
+		border-radius: 0px;
+		border: 0px;
+		margin-top: 60px;
+	}
+
+	.title {
+		margin-top: -17px;
+		margin-left: 0px;
+	}
+
+	.field-wrapper {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	.account-button {
+		border-radius: 0px;
+	}
+
+}
+
+
+@media only screen and (max-width: 610px) {
+
+	.account-container {
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+}
+
+@media only screen and (max-width: 320px) {
+
+	.title {
+		letter-spacing: 10px;
+	}
+
+}

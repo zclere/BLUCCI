@@ -1,0 +1,78 @@
+{% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'account/css/create_account.css' %}">
+</head>
+
+{% include 'home/includes/nav.html' %}
+
+<section class="account-container">
+	
+	
+
+	<div class="filter">
+		{% url 'account:signup' as url %}
+		<a href="{% url 'account:signup' %}" class="filter-button {% if request.path == url %}focused-filter{% endif %}">SIGNUP</a>
+
+		{% url 'account:signin' as url %}
+		<a href="{% url 'account:signin' %}" class="filter-button {% if request.path == url %}focused-filter{% endif %}">LOGIN</a>
+	</div>
+
+
+
+	<div class="cards-wrapper">
+
+		<div class="card-zero">
+			<video class="video-wrapper" loop autoplay muted>
+				<source src="{% static '../media/videos/video_cat.mp4' %}" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="card-one">
+			<form method="post">
+				{% csrf_token %}
+				<p class="title">CREATE ACCOUNT</p>
+
+				<div class="field-wrapper first-wrapper">
+					<label class="form-input">First Name</label>
+					<span>{{ user_form.first_name }}</span>
+				</div>
+
+				<div class="field-wrapper">
+					<label class="form-input">Last Name</label>
+					<span>{{ user_form.last_name }}</span>
+				</div>
+
+				<div class="field-wrapper">
+					<label class="form-input">Username</label>
+					<span>{{ user_form.username }}</span>
+				</div>
+
+				<div class="field-wrapper">
+					<label class="form-input">Password</label>
+					<span>{{ user_form.password1 }}</span>
+				</div>
+
+				<div class="field-wrapper">
+					<label class="form-input">Birth Date</label>
+					<span>{{ profile_form.birthday }}</span>
+				</div>
+
+				<div class="field-wrapper">
+					<label class="form-input">Gender</label>
+					<span>{{ profile_form.gender }}</span>
+				</div>
+
+				<div class="field-wrapper">
+					<button type="sumbit" value="submit" class="account-button">Sign up</button>
+				</div>
+			</form>
+
+		</div>
+		
+	</div>
+
+</section>
+
+
+{% include 'home/includes/footer.html' %}

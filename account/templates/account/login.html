@@ -1,0 +1,57 @@
+{% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'account/css/login.css' %}">
+</head>
+
+{% include 'home/includes/nav.html' %}
+
+<section class="account-container">
+
+
+	<div class="filter">
+		{% url 'account:signup' as url %}
+		<a href="{% url 'account:signup' %}" class="filter-button {% if request.path == url %}focused-filter{% endif %}">SIGNUP</a>
+
+		{% url 'account:signin' as url %}
+		<a href="{% url 'account:signin' %}" class="filter-button {% if request.path == url %}focused-filter{% endif %}">LOGIN</a>
+	</div>
+
+
+	<div class="cards-wrapper">
+
+		<div class="card-zero">
+			<video class="video-wrapper" loop autoplay muted>
+				<source src="{% static '../media/videos/video_shoe.mp4' %}" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="card-one">
+			<form method="post">
+				{% csrf_token %}
+				<p class="title">LOGIN</p>
+
+				<div class="field-wrapper first-wrapper">
+					<label class="form-input">Username</label>
+					<span>{{ form.username }}</span>
+				</div>
+
+				<div class="field-wrapper">
+					<label class="form-input">Password</label>
+					<span>{{ form.password }}</span>
+				</div>
+
+
+				<div class="field-wrapper">
+					<button type="submit" value="submit" class="account-button">Log in</button>
+				</div>
+			</form>
+
+		</div>
+		<div class="card-two"><a>Hey! ^^</a></div>
+	</div>
+
+</section>
+
+
+{% include 'home/includes/footer.html' %}
