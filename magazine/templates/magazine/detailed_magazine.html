@@ -1,0 +1,73 @@
+{% load static %}
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'magazine/css/detailed_magazine.css' %}">
+</head>
+
+<script type="text/javascript">
+
+	var PAGE_URL = '{{request.build_absolute_uri}}';
+	var PAGE_IDENTIFIER = '{{contentlist.id}}';
+
+</script>
+
+
+{% include 'home/includes/nav.html' %}
+
+
+<section class="magazine_container">
+
+	<div class="mag-header">
+		<h1 class="title">{{contentlist.title}}</h1>
+		<p class="author">By {{contentlist.author}} | <a class="pub_date">{{contentlist.date_published}}</a></p>
+	</div>
+
+	{% for detailed_magazine in detailed_magazine %}
+		<div class="detailed-view">
+			<h1 class="detailed-title">{{detailed_magazine.title}}</h1>
+			<p class="description">{{detailed_magazine.description | safe}}</p>
+
+			{% if detailed_magazine.image_URL %}
+				<img id="mag-img" src="{{ detailed_magazine.image_URL }}">
+			{% else %}
+				<img id="mag-img" src="{{ MEDIA_URL }}/magazine_images/no-img-available.jpg">
+			{% endif %}
+		</div>
+	{% endfor %}
+
+
+</section>
+
+
+<section class="comments">
+
+
+	<div id="disqus_thread"></div>
+	<script>
+	    /**
+	    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+	    var disqus_config = function () {
+	    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+	    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	    };
+
+	    (function() { // DON'T EDIT BELOW THIS LINE
+	    var d = document, s = d.createElement('script');
+	    s.src = 'https://blucci.disqus.com/embed.js';
+	    s.setAttribute('data-timestamp', +new Date());
+	    (d.head || d.body).appendChild(s);
+	    })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</section>
+
+
+<script id="dsq-count-scr" src="//blucci.disqus.com/count.js" async></script>
+
+
+{% include 'home/includes/footer.html' %}

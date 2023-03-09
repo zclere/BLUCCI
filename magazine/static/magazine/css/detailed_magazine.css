@@ -1,0 +1,139 @@
+.magazine_container {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	width: 60%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+	font-family: "Circular Std Black";
+	font-size: 50px;
+}
+
+.author, .pub_date {
+	font-family: "Circular Std Black";
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+.mag-header {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: url('/media/magazine_images/detailed_mag_title_bg.png');
+	background-size: 45%;
+	background-repeat: no-repeat;
+	background-position: 20%;
+}
+
+.detailed-view {
+	padding-top: 50px;
+}
+
+.detailed-title {
+	font-family: "Circular Std Black";
+	font-size: 40px;
+}
+
+.description {
+	margin-top: 10px;
+	font-size: 17px;
+	line-height: 25px;
+	text-align: justify;
+}
+
+#mag-img {
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+}
+
+.comments {
+	width: 60%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 800px) {
+
+	.magazine_container {
+		width: auto;
+		margin-left: 43px;
+		margin-right: 43px;
+	}
+
+	.comments {
+		width: auto;
+		margin-left: 43px;
+		margin-right: 43px;
+	}
+
+}
+
+@media only screen and (max-width: 610px) {
+
+	.magazine_container {
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+	.comments {
+		width: auto;
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+}
+
+@media only screen and (max-width: 460px) {
+
+	.mag-header {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.title {
+		font-size: 35px;
+	}
+
+	.author, .pub_date {
+		font-size: 12px;
+	}
+
+	.detailed-title {
+		font-size: 30px;
+	}
+
+	.description {
+		font-size: 15px;
+	}
+
+}
+
+@media only screen and (max-width: 330px) {
+
+	.mag-header {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.title {
+		font-size: 30px;
+	}
+
+	.author, .pub_date {
+		font-size: 10px;
+	}
+
+	.detailed-title {
+		font-size: 25px;
+	}
+
+	.description {
+		font-size: 12px;
+	}
+
+}

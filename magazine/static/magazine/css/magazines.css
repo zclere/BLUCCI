@@ -1,0 +1,222 @@
+html {
+	overflow-x: hidden;
+}
+
+.filter_qs {
+	padding-top: 130px;
+	text-align: center;
+}
+
+.fa-filter {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+@media (hover: hover) {
+
+	.fa-filter:hover {
+		opacity: 0.7;
+	}
+
+}
+
+.genre {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	width: 50%;
+	height: auto;
+	color: black;
+	display: flex;
+	justify-content: center;
+}
+
+.hidden {
+	display: none !important;
+}
+
+#input_style {
+	font-family: "Circular Std Book";
+	background-color: black;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 13px;
+	border: none;
+	margin: 5px;
+	border-radius: 1000px;
+}
+
+#clear_filter {
+	text-decoration: none;
+	color: white;
+	background-color: #36454F;
+	font-size: 13px;
+	padding: 10px;
+	border-radius: 1000px;
+	animation: clearanimate 20s ease infinite;
+}
+
+@media (hover: hover) {
+
+	#input_style:hover {
+		opacity: 0.7;
+	}
+
+	#clear_filter:hover {
+		opacity: 0.8;
+	}
+
+}
+
+@keyframes clearanimate {
+	0%   {background-color: #36454F;}
+	25%  {background-color: #819e77;}
+	50%  {background-color: #77879e;}
+	100% {background-color: #9e9e77;}
+}
+
+
+.card-container {
+	padding-top: 50px;
+	padding-bottom: 150px;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cards-wrapper{
+	columns: 3;
+	column-gap: 10px;
+}
+
+.cards {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#card-img {
+	width: 100%;
+	height: auto;
+	filter: grayscale(100%);
+}
+
+@media (hover: hover) {
+
+	#card-img:hover {
+		filter: none;
+		opacity: 0.95;
+	}
+
+}
+
+.lottie-style {
+	margin-top: 60px;
+}
+
+#lotte_player {
+	width: 400px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+}
+
+.lottie-style p {
+	font-size: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+@media only screen and (max-width: 950px) {
+
+	.genre {
+		width: auto;
+		margin-left: 43px;
+		margin-right: 43px;
+	}
+
+	.cards-wrapper{
+		columns: 2;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+	.card-container {
+		max-width: 100%;
+		margin-left: 43px;
+		margin-right: 43px;
+	}
+
+}
+
+@media only screen and (max-width: 610px) {
+
+	.genre {
+		width: auto;
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+	#input_style {
+		font-size: 10px;
+	}
+
+	#clear_filter {
+		font-size: 10px;
+	}
+
+	.card-container {
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+
+	.cards-wrapper{
+		columns: 1;
+	}
+
+}
+
+@media only screen and (max-width: 550px) {
+
+	.filter_qs {
+		padding-top: 100px;
+	}
+
+}
+
+@media only screen and (max-width: 440px) {
+
+	#input_style {
+		padding: 6px;
+		margin: 2px;
+	}
+
+	#clear_filter {
+		padding: 6px;
+		margin: 2px;
+	}
+
+}
+
+@media only screen and (max-width: 350px) {
+
+	.genre {
+		text-align: center;
+		line-height: 45px;
+	}
+
+
+}
