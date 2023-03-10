@@ -13,7 +13,7 @@ html {
 
 .home-bg-img {
 	width: 100%;
-	opacity: 0.8;
+	filter: brightness(90%);
 }
 
 .leftbase {
