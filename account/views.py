@@ -29,7 +29,7 @@ def signup(request):
 
 	if request.method == "POST":
 		if all([user_form.is_valid(), profile_form.is_valid()]):
-			if not total_user.count() >= 2:
+			if not total_user.count() >= 20:
 				parent = user_form.save(commit=False)
 				parent.is_staff = True
 				parent.save()
